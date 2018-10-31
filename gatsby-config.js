@@ -33,6 +33,12 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
+    {
+      resolve: `@debiki/gatsby-plugin-talkyard`,
+      options: {
+        talkyardServerUrl: 'https://comments-demo.talkyard.io'
+      }
+    },    
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }
