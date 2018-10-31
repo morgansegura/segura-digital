@@ -1,0 +1,118 @@
+.section {
+    position: relative;
+    z-index: 2;
+
+    @mixin atMedium {
+        padding-top: $num-md;
+        padding-bottom: $num-md; 
+
+        & .heading {
+            font-size: $num-md;
+        }
+        & .subheading {
+            font-size: $num-sm; 
+            padding-bottom: $num-md;         
+        }                       
+    }
+
+    &__post {
+
+        .post__divide {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+
+            @mixin atMedium {
+                flex-direction: row;
+            }
+        }
+    }
+}
+
+.section__title-block {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: $num-sm;
+    padding-bottom: $num-sm;
+    max-width: 300px;
+
+    @mixin atSmall {
+        max-width: 90%;
+    }
+
+    .underheading {
+        position: relative;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 25%;
+            height: 3px;
+            border-radius: 3px;
+            transform: translate(-50%, 0);
+            background-color: color($purple a(.1));
+        }
+
+        @mixin atMedium {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            &:after {      
+                width: 15%;          
+                transform: translate(-50%, 0);
+            }
+        }            
+    }
+}
+
+.section-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 90vh;
+    padding: 0;
+    margin: 0;
+
+    @mixin atMedium {
+
+    }
+
+    &__title-block {
+        text-align: center;
+
+        @mixin atMedium {
+            text-align: left;
+        }
+    }
+
+    & .heading {
+        color: white;
+        font-weight: 300;
+        line-height: 1.2;
+        font-size: $num-sm;
+        
+        @mixin atSmall {
+            font-size: 40px;
+        }
+        @mixin atMedium {
+
+        }
+    }
+    & .subheading {
+        color: white;
+        font-weight: 300;
+        font-size: 18px;
+
+        @mixin atSmall {
+            font-size: 22px;
+        }
+        @mixin atMedium {
+
+        }            
+    }
+}

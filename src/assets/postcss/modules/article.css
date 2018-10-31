@@ -1,0 +1,82 @@
+.article {
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;        
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+
+}
+
+.excerpt {
+
+    color: $main-gray;
+
+    &__sticky {
+        background-color: google-color(grey, 50);
+        border: 1px solid red;
+        margin-bottom: 2rem;        
+    }
+
+    &__header {
+        
+    }
+    &__content {
+
+    }
+    &__footer {
+
+    }
+    &__title {
+
+    }
+    &__image {
+
+        img {
+            max-width: 100%;
+        }
+    }
+}
+.excerpt__with-image {
+    position: relative;
+    background-position: 0 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 2rem;
+
+    background-color: google-color(amber, 300);
+    padding: 4rem 2rem 2rem 2rem;
+
+    .excerpt__image {
+        position: relative;
+
+        z-index: 1;
+
+        img {
+ 
+        }
+    }
+
+    .excerpt__content {
+        position: relative;
+        z-index: 2;
+        background-color: white;
+        margin-top: 4rem;
+        padding: 1rem;
+    }
+}
+
+.excerpt-minimal {
+    
+    background-color: #fff;
+    box-shadow: 0 0 20px google-color(grey, 200);
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+    &__inner {
+
+    }
+}

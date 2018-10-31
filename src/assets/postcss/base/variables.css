@@ -1,0 +1,46 @@
+/* Fonts */
+$sans-primary: 'Source Sans Pro', sans-serif;
+$mono-primary: 'Roboto Mono', monospace, sans-serif;
+$serif-primary: 'Roboto Slab', serif;
+$cursive: 'Norican', cursive;
+
+/* Shades */
+$main-black: #20232a;
+$main-white: #ededed;
+$main-gray: #484848;
+$main-gray-light: #a9a9a9;
+$tan: #f4f1ec;
+
+/* Theme Colors */
+$purple-lighter: #8b808a;
+$purple-light: #3c2a3b;
+$purple-medium: #271726;
+$purple-dark: #1d161d;
+
+/* Alt Colors */
+$green-lights: #5dcf91;
+$green-dark: #3f9065;
+$purple: #a3679a;
+$peach: #ff907d;
+$red-light: #df4f4f;
+$red-dark: #b0191f;
+$yellow-light: #febb4a;
+$yellow-dark: #e4a443;
+$teal-light: #1f9ca0;
+$teal-dark: #2a5464;
+$blue-black-light: #3a3c49;
+$blue-black-dark: #2c2f38;
+$green-light: google-color(green, 50);
+
+/* Dimensions */
+$atSmallest: 320px;
+$atSmall: 576px;
+$atMedium: 768px;
+$atLarge: 992px;
+$atLargest: 1200px;
+
+/* Spacing */
+$num-sm: 30px;
+$num-md: 60px;
+$num-lg: 90px;
+$num-xl: 120px;

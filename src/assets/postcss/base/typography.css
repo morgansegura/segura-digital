@@ -1,0 +1,154 @@
+.t {
+    &-center {
+        text-align: center;
+    }
+    &-justify {
+        text-align: center;
+    }
+    &-left {
+        text-align: center;
+    }
+    &-right {
+        text-align: center;
+    }
+}
+
+.b {
+    &3 {
+     font-weight: 300;   
+    }
+    &4 {
+     font-weight: 400;   
+    }
+    &5 {
+     font-weight: 500;   
+    }
+    &6 {
+     font-weight: 600;   
+    }
+    &7 {
+     font-weight: 700;   
+    }
+    &8 {
+     font-weight: 800;   
+    }
+    &9 {
+     font-weight: 900;   
+    }
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 { 
+    font-family: $sans-primary;
+}
+.insane {
+    font-size: 60px;
+
+    @mixin atSmall {
+        
+    }
+    @mixin atMedium {
+        font-size: 100px;
+    }
+}
+.h1 {
+    font-size: 40px;
+    line-height: 1.3;
+
+    @mixin atSmall {
+        font-size: 40px;
+    }
+    @mixin atMedium {
+        font-size: 48px;
+    }
+    @mixin atLarge {
+        font-size: 60px;
+    }
+    @mixin atLargest {
+        font-size: 72px;
+    }
+}
+.h2 {
+    font-size: 22px;
+    line-height: 1.3;
+    
+    @mixin atSmall {
+        font-size: 30px;
+    }
+    @mixin atMedium {
+        font-size: 40px;
+    }
+    @mixin atLarge {
+        font-size: 48px;
+    }
+    @mixin atLargest {
+        font-size: 60px;
+    }
+}
+.h3 {
+    font-size: 20px;
+
+    @mixin atSmall {
+        font-size: 24px;
+    }
+    @mixin atMedium {
+        font-size: 30px;
+    }
+    @mixin atLarge {
+        font-size: 40px;
+    }
+    @mixin atLargest {
+        font-size: 48px;
+    }
+}
+.h4 {
+    font-size: 18px;
+
+    @mixin atSmall {
+        font-size: 22px;
+    }
+    @mixin atMedium {
+        font-size: 24px;
+    }
+    @mixin atLarge {
+        font-size: 30px;
+    }
+    @mixin atLargest {
+        font-size: 40px;
+    }
+}
+.h5, .h6 {
+    font-size: 16px;
+    color: $main-gray-light;
+    font-weight: 800;
+}
+
+.heading {
+    padding-bottom: 20px;
+}
+
+.sans {
+    font-family: $sans-primary;
+}
+
+.serif {
+    font-family: $serif-primary;
+}
+.mono {
+    font-family: $mono-primary;
+}
+.cursive {
+    font-family: $cursive;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.lowercase {
+    text-transform: uppercase;
+}
+.capitalize {
+    text-transform: capitalize;
+}
+.sub {
+    
+}

@@ -1,0 +1,38 @@
+.container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  z-index: 2;
+  margin: 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @mixin atSmallest {
+    max-width: $atSmall;
+  }  
+  @mixin atSmall{
+    max-width: $atMedium;
+  }
+
+  @mixin atMedium {
+    max-width: $atLarge;
+  }
+
+  @mixin atLarge {
+    max-width: $atLargest;
+  }
+
+  &--sm {  
+    max-width: 500px;
+  }
+
+  &--md {  
+      max-width: 800px;
+  }
+
+  &--lg {
+      max-width: 1000px;
+  }
+
+}
+

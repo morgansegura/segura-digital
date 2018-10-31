@@ -2,45 +2,63 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import Hero from '../components/Hero'
+import Services from '../components/Services'
+import HeadingBlock from '../components/ui/HeadingBlock'
+import Panel from '../components/ui/Panel'
 
 export default class IndexPage extends React.Component {
+
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
 
+    const panelHeaderData = {
+      data: [{
+        title: 'Latest Posts'
+      }]
+    }
+    const servicesHeading = {
+        title: 'Latest Posts',
+        subtitle: 'an interesting SEO rich subtitle'
+    }
+
     return (
       <Layout>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
-            </div>
-            {posts
-              .map(({ node: post }) => (
-                <div
-                  className="content"
-                  style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-                  key={post.id}
-                >
-                  <p>
-                    <Link className="has-text-primary" to={post.fields.slug}>
-                      {post.frontmatter.title}
-                    </Link>
-                    <span> &bull; </span>
-                    <small>{post.frontmatter.date}</small>
-                  </p>
-                  <p>
-                    {post.excerpt}
-                    <br />
-                    <br />
-                    <Link className="button is-small" to={post.fields.slug}>
-                      Keep Reading →
-                    </Link>
-                  </p>
-                </div>
-              ))}
-          </div>
-        </section>
+        <div className="pattern-wool">
+          <Hero />
+          <HeadingBlock headings={servicesHeading} />
+          <Services/>
+          <section className="section">            
+            <Panel header={panelHeaderData} style={`small`}>
+                {posts
+                  .map(({ node: post }) => (
+                    <div className="panel__list-item">
+                      <div
+                        className="blog-panel__content"
+                        key={post.id}
+                      >
+                        <p>
+                          <Link className="has-text-primary" to={post.fields.slug}>
+                            {post.frontmatter.title}
+                          </Link>
+                          <span> &bull; </span>
+                          <small>{post.frontmatter.date}</small>
+                        </p>
+                        <p>
+                          {post.excerpt}
+                          <br />
+                          <br />
+                          <Link className="btn btn-sm btn-purple" to={post.fields.slug}>
+                            Keep Reading →
+                          </Link>
+                        </p>
+                      </div>
+                    </div>
+                ))}
+            </Panel>
+          </section>
+        </div>
       </Layout>
     )
   }
