@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import ContactModal from './ui/ContactModal'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -11,6 +12,7 @@ const TemplateWrapper = ({ children }) => (
     <Header />
     <main className="main">{children}</main>
     <Footer />
+    <ContactModal />
   </div>
 )
 

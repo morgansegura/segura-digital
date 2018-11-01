@@ -26,6 +26,7 @@
         box-shadow: 0 1px 4px color($purple-light tint(90%));  
         border: 1px solid color($purple-light tint(90%));      
         background-color: color(white a(50%));
+        margin-bottom: 1rem;
 
         @mixin atMedium {
             max-width: 400px;
@@ -39,7 +40,7 @@
         padding-left: 30px;
         border-bottom: 1px solid color($purple-light tint(90%));
         font-weight: 300;
-        color: $purple;
+        color: $purple-light;
         text-transform: uppercase;
     }
 
@@ -53,4 +54,48 @@
             font-size: 1.1rem;
         }
     }
+
+    .comments {
+        .Widget__header--1TTFi,
+        .Widget__content--2jRDq,
+        .CommentsForm__leftColumn--2qkhH,
+        .Widget__attribution--1a7uF {
+            opacity: 0;
+            visibility: hidden;
+            z-index: -1;
+            display: none;
+        }
+        .CommentsForm__rightColumn--1x1ac {
+            width: 100%;
+        }
+        .CommentsForm__send--1TtZb.jcSendCommentButton {
+            position: relative;
+            z-index: 3;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 3px;
+            text-align: center;
+            text-transform: uppercase;
+            border: 2px solid transparent;
+            font-family: $sans-primary;
+            -webkit-transition: background-color .2s ease-out;
+            transition: background-color .2s ease-out;
+            cursor: pointer;
+            display: inline-block;
+            line-height: 1.2;
+            font-size: inherit;
+            text-shadow: none;
+            background-color: $purple;
+            color: white;
+            border-color: transparent;
+
+            &:hover, a:hover & {
+                background-color: color($purple blend($peach 30%));
+            }
+            &:active, a:active & {
+                background-color: color($purple blend($peach 30%) shade(5%));                
+            }                     
+        }
+    }
+
 }

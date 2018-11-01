@@ -2,7 +2,7 @@
     border-radius: 6px;
     box-shadow: 0 1px 4px color(black a(.1));
     border: 1px solid google-color(grey, 300);
-    background-color: color(white a(80%));
+    background-color: color(white);
     padding-top: 1rem;
     padding-bottom: 1rem; 
 
@@ -60,7 +60,7 @@
         padding: 1rem;
         background-color: transparent;
         &:hover {
-            background-color: color($peach a(.05));
+            /* background-color: color($peach a(.05)); */
         }
 
     }
@@ -71,7 +71,7 @@
         font-size: 11px;
     }
     &__header {
-        color: $purple;
+        color: $purple-light;
         text-transform: uppercase;
         padding-bottom: 1rem;
         border-bottom: 1px solid google-color(grey, 200);

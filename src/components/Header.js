@@ -29,7 +29,7 @@ class Header extends Component {
 
         document.addEventListener('keyup', function (e) {
             let keyCode = e.keyCode;
-            console.log(keyCode)
+            // console.log(keyCode)
             if (keyCode === 27) {
                 body.classList.remove('nav--is-open')
             }
@@ -74,7 +74,7 @@ class Header extends Component {
                         <Link className="link" to="/#illustration">Illustration</Link>
                         <Link className="link" to="/articles">Blog</Link>
                         <Link className="link" to="/about">About</Link>
-                        <Link className="link btn btn-sm btn-round btn-cta btn-round" to="">Contact</Link>
+                        <div className="link btn btn-sm btn-round btn-cta btn-round" onClick={this.openModal}>Contact</div>
                     </nav>
                     <div className="menu-icon" onClick={event => { this.openMobileNav(event) }}>
                         <div className="menu-icon__center"></div>

@@ -1,14 +1,99 @@
 .single {
 
+
+    /* This was done quickly, please refactor. */
+
+    p {
+        /* font-size: 16px; */
+        margin-top: 25px;
+        line-height: 1.7;
+        max-width: 42em;             
+    }
+
+    @mixin atMedium {
+        p {
+            margin-top: 30px;
+            /* font-size: 17px; */
+        }
+    }    
     &__header {
         
     }
-    &__content {
-        font-family: $serif-primary;
-        font-size: 18px;
-        font-weight: 300;
-        color: $purple-light;
+    &__title {
+        margin-bottom: 0;
+        margin-top: 40px;
+        font-weight: 700;        
+        font-size: 40px;
+        line-height: 45px;
 
+        @mixin atMedium {
+            font-size: 60px;
+            line-height: 65px;            
+        }      
+    }
+    &__description, p.single__description {
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 1.6;
+        color: google-color(grey, 600);
+
+        @mixin atMedium {
+            font-size: 28px;    
+        }      
+    }
+    h2 {
+        font-family: $serif-primary;
+        font-size: 24px;
+        border-top: 1px solid #ececec;
+        margin-top: 44px;
+        padding-top: 40px;
+        line-height: 1.2; 
+
+        @mixin atMedium {
+            font-size: 35px;            
+        }       
+    }
+    &__date {
+        margin-top: 15px;
+        font-weight: 600;
+    }
+    img {
+        max-width: 100%;
+        display: block;
+    }
+    a {
+        background-color: color(google-color(cyan, a400) a(.2));
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        color: #1a1a1a;
+        transition: background-color .3s ease-out;
+
+        &:hover, &:active {
+            background-color: color(google-color(cyan, a400) a(.3));
+        }     
+    }
+    .blockquote, blockquote {
+        background-color: color(google-color(yellow, a400) a(.3));
+        border-left-color: google-color(yellow, a400);
+        border-left-width: 9px;
+        border-left-style: solid;
+        padding: 20px 45px 20px 26px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+        margin-left: -1rem;
+        margin-right: -1.6rem; ;  
+
+        p {
+            margin-top: 0;
+            font-weight: 700
+        }     
+    }
+    .highlight {
+        background: rgba(255,229,100,0.2);
+    }
+    &__content {
+        /* font-family: $serif-primary; */
+        color: $purple-light;
+       
         code, pre {
             font-size: 1rem;
             font-weight: normal;
@@ -25,10 +110,6 @@
         code {
             /* padding: 0; */
             /* margin-left: -40px; */
-        }
-
-        @mixin atMedium {
-            
         }
     }
     &__footer {
