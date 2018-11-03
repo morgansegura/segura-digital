@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 
+
 class Header extends Component {
 
     state = {
@@ -14,18 +15,18 @@ class Header extends Component {
     }
 
     closeMobileNav = () => {
-        const specifiedElement = document.querySelector(".menu-icon")
+        // const specifiedElement = document.querySelector(".menu-icon")
         const body = document.getElementsByTagName('body')[0]
 
-        document.addEventListener('click', function (event) {
-            const isClickInside = specifiedElement.contains(event.target);
+        // document.addEventListener('click', function (event) {
+        //     const isClickInside = specifiedElement.contains(event.target);
 
-            if (body.classList.contains('nav--is-open')) {
-                if (!isClickInside) {
-                    body.classList.remove('nav--is-open')
-                }
-            }
-        })
+        //     if (body.classList.contains('nav--is-open')) {
+        //         if (!isClickInside) {
+        //             body.classList.remove('nav--is-open')
+        //         }
+        //     }
+        // })
 
         document.addEventListener('keyup', function (e) {
             let keyCode = e.keyCode;
@@ -61,7 +62,8 @@ class Header extends Component {
     }
 
     render() {
-        return (
+        return (     
+            
             <header className="header-main">
                 <div className="header-main__inner container">
                     <h1 className="logo">
@@ -70,17 +72,17 @@ class Header extends Component {
                         </Link>
                     </h1>
                     <nav className="navigation-main">
-                        <Link className="link" to="/#work">Portfolio</Link>
-                        <Link className="link" to="/#illustration">Illustration</Link>
-                        <Link className="link" to="/articles">Blog</Link>
-                        <Link className="link" to="/about">About</Link>
-                        <div className="link btn btn-sm btn-round btn-cta btn-round" onClick={this.openModal}>Contact</div>
+                        <Link className="link" to="/work">Portfolio</Link>
+                        <Link className="link" to="/illustration">Illustration</Link>
+                        <Link className="link" to="/blog">Blog</Link>
+                        <Link className="link" to="/about">About</Link>                        
                     </nav>
                     <div className="menu-icon" onClick={event => { this.openMobileNav(event) }}>
                         <div className="menu-icon__center"></div>
                     </div>
                 </div>
-            </header>
+            </header>            
+
         )
     }
 }

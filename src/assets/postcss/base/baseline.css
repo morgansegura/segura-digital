@@ -51,7 +51,7 @@ body {
   position: relative;
   background-color: white;
   flex: 1;
-  padding-top: 60px;
+  /* padding-top: 60px; */
 
   &.nav--is-open {
 
@@ -158,4 +158,36 @@ pre[class*="language-"] {
 
 .flex {
   display: flex;
+}
+
+.list {
+  display: flex;
+
+  &-center {
+    justify-content: center;
+  }
+  &-column {
+    flex-direction: column;
+  }
+  a {
+      background-color: color(google-color(yellow, a400) a(.2));
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      color: #1a1a1a;
+      transition: background-color .3s ease-out;
+
+      &:hover, &:active {
+          background-color: color(google-color(yellow, a400) a(.3));
+      }     
+  }   
+}
+.item {
+  &-row {
+    margin-right: 1rem;
+  }
+  &-stack {      
+    margin-bottom: .5rem;
+  }
+  &-middle {
+    align-items: center;
+  }     
 }

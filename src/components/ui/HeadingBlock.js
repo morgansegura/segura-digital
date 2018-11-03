@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HeadingBlock = (props) => {
-    console.log(props.headings)
+    // console.log(props.headings)
     return (
         <header className="section__title-block">
             <h2 className="heading underheading h1 b3 t-center">{props.headings.title}</h2>

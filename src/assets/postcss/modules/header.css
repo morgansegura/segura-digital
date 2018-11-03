@@ -1,5 +1,5 @@
 .header {
-    position: fixed;
+    position: sticky;
     z-index: 1;
 
     &__static {
@@ -7,8 +7,8 @@
     }
 }
 .header-main {
-    /* position: sticky; */
-    position: fixed;    
+    position: sticky;
+    /* position: fixed;     */
     top: 0;
     left: 0;
     z-index: 4;

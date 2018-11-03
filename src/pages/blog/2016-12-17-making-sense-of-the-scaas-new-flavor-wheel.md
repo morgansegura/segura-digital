@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: Making changes to feel the love and again
 date: 2016-12-17T15:04:10.000Z
+author: Morgan Segura
 description: >-
   The Coffee Taster’s Flavor Wheel, the official resource used by coffee
   tasters, has been revised for the first time this year.
@@ -15,9 +16,20 @@ The SCAA updated the wheel to reflect the finer nuances needed to describe flavo
 
 While this is going to be a big change for professional coffee tasters, it means a lot to you as a consumer as well. We’ll explain how the wheel came to be, how pros use it and what the flavors actually mean.
 
-```
-// Code works 
-```
+<pre>
+<code class="language-javascript">
+  function renderDisqus() {
+      if (window.DISQUS === undefined) {
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://' + SHORTNAME + '.disqus.com/embed.js';
+          document.getElementsByTagName('head')[0].appendChild(script);
+      } else {
+          window.DISQUS.reset({ reload: true });
+      }
+  }  
+</code>
+</pre>
 
 ## What the updates mean to you
 

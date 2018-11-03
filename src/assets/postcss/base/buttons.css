@@ -101,3 +101,10 @@
         border-radius: 50px;
     }
 }
+
+#headerContact {
+    position: fixed;
+    right: 30px;
+    top: 18px;
+    z-index: 1;
+}

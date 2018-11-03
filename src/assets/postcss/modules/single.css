@@ -1,121 +1,97 @@
 .single {
 
-
-    /* This was done quickly, please refactor. */
-
-    p {
-        /* font-size: 16px; */
-        margin-top: 25px;
-        line-height: 1.7;
-        max-width: 42em;             
+    &__content-block {
+        padding-bottom: 2rem;
     }
-
-    @mixin atMedium {
+    &__content {
+        padding-bottom: 1rem;
         p {
-            margin-top: 30px;
-            /* font-size: 17px; */
+            color: $purple-light;            
+            margin-top: 25px;
+            line-height: 1.7;        
+        }  
+        ul li { list-style-type: disc;}
+        h2 {
+            font-family: $serif-primary;
+            font-size: 24px;
+            border-top: 1px solid #ececec;
+            margin-top: 44px;
+            padding-top: 40px;
+            line-height: 1.2; 
+
+            @mixin atMedium {
+                font-size: 35px;            
+            }       
         }
-    }    
-    &__header {
-        
+    
+        &__date {
+            margin-top: 15px;
+            font-weight: 600;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        a {
+            background-color: color(google-color(cyan, a400) a(.2));
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            color: #1a1a1a;
+            transition: background-color .3s ease-out;
+
+            &:hover, &:active {
+                background-color: color(google-color(cyan, a400) a(.3));
+            }     
+        }
+ 
+        .blockquote, blockquote {
+            background-color: color(google-color(yellow, a400) a(.3));
+            border-left-color: google-color(yellow, a400);
+            border-left-width: 9px;
+            border-left-style: solid;
+            padding: 20px 45px 20px 26px;
+            margin-bottom: 30px;
+            margin-top: 20px;
+            margin-left: -1rem;
+            margin-right: -1.6rem; ;  
+
+            p {
+                margin-top: 0;
+                font-weight: 700
+            }     
+        }
+        .highlight {
+            background: rgba(255,229,100,0.2);
+        }
+        @mixin atMedium {
+            p {
+                margin-top: 30px;
+            }
+        }        
     }
     &__title {
         margin-bottom: 0;
-        margin-top: 40px;
+        margin-top: 2.5rem;
         font-weight: 700;        
         font-size: 40px;
         line-height: 45px;
 
         @mixin atMedium {
+            margin-top: 7rem;
             font-size: 60px;
             line-height: 65px;            
         }      
     }
     &__description, p.single__description {
-        font-size: 20px;
+        font-size: 18px;
+        font-family: $serif-primary;
         font-weight: 300;
         line-height: 1.6;
         color: google-color(grey, 600);
 
         @mixin atMedium {
-            font-size: 28px;    
+            font-size: 24px;    
         }      
-    }
-    h2 {
-        font-family: $serif-primary;
-        font-size: 24px;
-        border-top: 1px solid #ececec;
-        margin-top: 44px;
-        padding-top: 40px;
-        line-height: 1.2; 
-
-        @mixin atMedium {
-            font-size: 35px;            
-        }       
-    }
-    &__date {
-        margin-top: 15px;
-        font-weight: 600;
-    }
-    img {
-        max-width: 100%;
-        display: block;
-    }
-    a {
-        background-color: color(google-color(cyan, a400) a(.2));
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-        color: #1a1a1a;
-        transition: background-color .3s ease-out;
-
-        &:hover, &:active {
-            background-color: color(google-color(cyan, a400) a(.3));
-        }     
-    }
-    .blockquote, blockquote {
-        background-color: color(google-color(yellow, a400) a(.3));
-        border-left-color: google-color(yellow, a400);
-        border-left-width: 9px;
-        border-left-style: solid;
-        padding: 20px 45px 20px 26px;
-        margin-bottom: 30px;
-        margin-top: 20px;
-        margin-left: -1rem;
-        margin-right: -1.6rem; ;  
-
-        p {
-            margin-top: 0;
-            font-weight: 700
-        }     
-    }
-    .highlight {
-        background: rgba(255,229,100,0.2);
-    }
-    &__content {
-        /* font-family: $serif-primary; */
-        color: $purple-light;
-       
-        code, pre {
-            font-size: 1rem;
-            font-weight: normal;
-            font-family: $mono-primary;            
-        }
-        :not(pre)>code[class*=language-], pre[class*=language-] {
-            background-color: $purple-dark;
-        }        
-        pre, pre[class*=language-] {
-            background-color: $purple-dark;
-            /* padding: 0; */
-            /* border-radius: 10px; */
-        }
-        code {
-            /* padding: 0; */
-            /* margin-left: -40px; */
-        }
-    }
-    &__footer {
-
-    }
-
+    }    
 }
 
 .four-o-four {
@@ -171,6 +147,7 @@
         }
     }
 }
+
 .puzzle {
     position: relative;
 
