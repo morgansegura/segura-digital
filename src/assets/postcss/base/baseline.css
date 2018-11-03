@@ -134,6 +134,13 @@ a {
   }
 }
 
+.no-border {
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
+
 .no-negative {
   margin-left: auto;
   margin-right: auto;

@@ -37,7 +37,7 @@ export const BlogPostTemplate = ({
       title: 'More Posts'
     }]
   }
-  console.log(match)
+
   return (    
     <section className="section single bgcolor-grey pattern-wool">
       <Helmet title={`${title} | Blog`}>
