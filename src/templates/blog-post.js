@@ -115,6 +115,7 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
+  author: PropTypes.string,
   helmet: PropTypes.instanceOf(Helmet),
 }
 
@@ -131,6 +132,7 @@ const BlogPost = ({ data }) => {
         description={post.frontmatter.description}
         // helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
         tags={post.frontmatter.tags}
+        author={post.frontmatter.author}
         title={post.frontmatter.title}
         date={post.frontmatter.date}
         postData={posts}
