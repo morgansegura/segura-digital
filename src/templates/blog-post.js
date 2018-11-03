@@ -20,6 +20,7 @@ export const BlogPostTemplate = ({
   match
 
 }) => {
+  const windowGlobal = typeof window !== 'undefined' && window.location.href
   const PostContent = contentComponent || Content
   const commentHeader = {
     data: [{
@@ -36,77 +37,69 @@ export const BlogPostTemplate = ({
       title: 'More Posts'
     }]
   }
-
+  console.log(match)
   return (    
-    <div className="single bgcolor-grey pattern-wool">
- 
-      <section className="section single__block">
-
-        <Helmet title={`${title} | Blog`}>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css"></link>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js" defer="true"></script>         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js" defer="true"></script>
-        </Helmet>
-        <div className="container">
-            <div className="row">
-              <div className="col-12 col-md-8 single__content-block">
-                <div className="single__content">
-                  <h1 className="single__title">
-                    {title}
-                  </h1>
-                  <p className="single__date">{date}</p>
-                  <p className="single__description">{description}</p>
-                  <PostContent content={content} />
-                </div>
-
-                <Panel header={commentHeader} classList={`panel`}>
-                  <div className="panel__list-item">
-                      <DisqusThread
-                        id={postId}
-                        title={title}
-                        path={match}
-                      />            
-                  </div>
-                </Panel>            
+    <section className="section single bgcolor-grey pattern-wool">
+      <Helmet title={`${title} | Blog`}>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css"></link>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js" defer="true"></script>         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js" defer="true"></script>
+      </Helmet>
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-8 single__content-block">
+            <div className="single__content">
+              <h1 className="single__title">
+                {title}
+              </h1>
+              <p className="single__date">{date}</p>
+              <p className="single__description">{description}</p>
+              <PostContent content={content} />
+            </div>
+            <Panel header={commentHeader} classList={`panel`}>
+              <div className="panel__list-item">
+                  <DisqusThread
+                    id={postId}
+                    title={title}
+                    path={windowGlobal}
+                  />            
               </div>
-
-              <aside className="aside col-12 col-md-4 p-y-lg">   
-                        
-              {tags && tags.length ? (
-                <Panel header={tagHeader} classList={`panel`}>
-                  <div className="panel__list-item">
-                    <div className="list">
-                    {tags.map(tag => (
-                        <p key={tag + `tag`} className="item-row">
-                          <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                        </p>
-                    )) /* [/tags.map] */}
-                    </div>               
-                  </div>
-                </Panel>
-              ) : null /* [/tags] */ }
-
-              {postData && postData.length ? (
-                <Panel header={moreHeader} classList={`panel`}>
-                  <div className="panel__list-item">
-                    {postData.map(( { node: more }, i) => (
-                      <div key={i} className="list list-column">
-                        { more.id !== postId ? (
-                          <h4 className="item-stack">
-                            <Link to={`/${more.fields.slug}/`}>{more.frontmatter.title}</Link>
-                          </h4>
-                        ) : null /* [/more.id] */}
-                      </div>
-                    )) /* [/postData.map] */}
-                  </div>  
-                </Panel>
-              ) : null /* [/postData] */}  
-
-              </aside>
-            </div> 
+            </Panel>            
           </div>
-      </section>
-    </div>
+
+          <aside className="aside col-12 col-md-4">
+          {tags && tags.length ? (
+            <Panel header={tagHeader} classList={`panel`}>
+              <div className="panel__list-item">
+                <div className="list">
+                {tags.map(tag => (
+                    <p key={tag + `tag`} className="item-row">
+                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                    </p>
+                )) /* [/tags.map] */}
+                </div>               
+              </div>
+            </Panel>
+          ) : null /* [/tags] */ }
+          {postData && postData.length ? (
+            <Panel header={moreHeader} classList={`panel`}>
+              <div className="panel__list-item">
+                {postData.map(( { node: more }, i) => (
+                  <div key={i} className="list list-column">
+                    { more.id !== postId ? (
+                      <h4 className="item-stack">
+                        <Link to={`/${more.fields.slug}/`}>{more.frontmatter.title}</Link>
+                      </h4>
+                    ) : null /* [/more.id] */}
+                  </div>
+                )) /* [/postData.map] */}
+              </div>  
+            </Panel>
+          ) : null /* [/postData] */}  
+          </aside>
+        </div> 
+      </div>
+    </section>
   )
 }
 
