@@ -7,7 +7,8 @@ const Footer = ({ siteTitle }) => (
 
     <footer className="footer">
         <div className="container footer__inner">
-            <p className="copyright">{siteTitle} &copy; {theYear}</p>
+            <p className="copyright">Segura LLC. &copy; {theYear}</p>
+            {/*
             <nav className="navigation__secondary">
                 <Link className="link" to="/">Work</Link>
                 <span className="divider"> / </span>
@@ -16,6 +17,7 @@ const Footer = ({ siteTitle }) => (
                 <Link className="link" to="/about">About</Link>
             </nav>
             <Link className="footer__cta btn btn-sm btn-cta" to="/">Let's work together</Link>
+            */}
         </div>
     </footer>
 )

@@ -1,0 +1,119 @@
+.form {
+    position: relative;
+
+    input:not([type]), 
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select,
+    option {
+        width: 100%;
+    }
+
+    button.submit {
+        margin-top: 5%;
+        padding: .5rem 2rem;
+
+        &.right {
+            margin-right: 1rem;
+            margin-left: 1rem;
+        }
+    }
+    &__group {
+        display: flex;
+        width: 100%;
+    }
+}
+
+.form-contact {
+    height: 100%;
+
+    input:not([type]), 
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+        border: 1px solid google-color(grey, 300);
+        border-radius: 0;
+        padding: .75rem;
+
+        &:active {
+
+        }
+    }    
+    label {
+        color: google-color(grey, 700);
+        margin-top: 5%;
+        padding-bottom: 5px;
+        display: inline-block;
+        line-height: 1.3;
+    }
+    textarea,
+    select {
+        /* min-width: 300px; */
+    }
+    select {
+        height: 40px;
+    }
+    textarea {
+        min-height: 100px;
+    }
+    .row {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        height: 100%;
+    }
+}
+.btnClose {
+    position: absolute;
+    right: 1rem;
+    top: .5rem;
+    border: none;
+    color: google-color(grey, 400);
+    font-size: 22px;
+    cursor: pointer;
+    display: block;
+    transition: color .3s ease-out;
+
+    &:hover {
+        color: google-color(grey, 700);
+    }
+    &:active {
+        color: google-color(grey, 800);
+    }
+}
+
+.modal {
+    position: fixed;    
+    width: 100%;
+    height: 100%; 
+    margin: 0;
+    padding: 0;   
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    /* transform: translate(-50%, -50%); */
+
+    .panel {
+        margin-top: 0;
+        border-radius: 0;
+        height: 100%;
+
+        &__header {
+            padding-top: .5rem;
+            padding-bottom: 1rem;
+        }
+
+        &__list-item {
+            flex: 1;
+            height: 100%;
+            border: none;
+        }
+    }
+}
+.modal-contact {
+
+}

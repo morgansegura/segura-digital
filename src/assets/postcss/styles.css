@@ -17,6 +17,7 @@
 @import 'base/panel';
 @import 'base/theme';
 @import 'base/aside';
+@import 'base/forms';
 
 /* BEM Modules */
 @import 'modules/header';
