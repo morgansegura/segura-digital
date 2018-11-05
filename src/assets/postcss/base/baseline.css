@@ -16,7 +16,13 @@ body {
   background-color: $purple-dark;
 
   &.nav--is-open {
-    /* position: fixed; */
+    overflow: hidden;
+    @mixin atMedium {
+
+    }
+  }
+  &.modal--is-open {
+    overflow: hidden;
     @mixin atMedium {
 
     }
@@ -37,8 +43,8 @@ body {
     position: relative;
 
     @mixin atMedium {
-      position: relative;
-      transform: translateX(0);
+      /* position: relative;
+      transform: translateX(0); */
 
       .main, .footer {
         opacity: 1;

@@ -16,8 +16,7 @@ export const BlogPostTemplate = ({
   title,
   postId,
   date,
-  postData,
-  match
+  postData
 
 }) => {
   const windowGlobal = typeof window !== 'undefined' && window.location.href

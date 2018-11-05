@@ -15,12 +15,12 @@ export default class IndexPage extends Component {
 
     const panelHeaderData = {
       data: [{
-        title: 'Latest Posts'
+        title: 'Blog Posts'
       }]
     }
     const servicesHeading = {
-        title: 'Latest Posts',
-        subtitle: 'an interesting SEO rich subtitle'
+        title: 'What we can do for you',
+        subtitle: 'Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.'
     }
 
     return (
@@ -29,27 +29,29 @@ export default class IndexPage extends Component {
           <Hero />
           <HeadingBlock headings={servicesHeading} />
           <Services/>
-          <section id="BlogArticles" className="section">            
+          <section id="BlogArticles" className="section container container-md">            
             <Panel header={panelHeaderData}>
                 {posts
                   .map(({ node: post }) => (
                     <div className="panel__list-item" key={post.id}>
-                      <div className="blog-panel__content">
-                        <p>
+                      <div className="single__content">
+                        <h2 className="post-list__title">
                           <Link className="has-text-primary" to={post.fields.slug}>
                             {post.frontmatter.title}
                           </Link>
-                          <span> &bull; </span>
-                          <small>{post.frontmatter.date}</small>
-                        </p>
+                        </h2>
+                        <p className="single__date">
+                          <strong>{post.frontmatter.date}</strong>
+                          {post.frontmatter.author ? ` | ${post.frontmatter.author}` : null}
+                        </p>                        
                         <p>
                           {post.excerpt}
-                          <br />
-                          <br />
-                          <Link className="btn btn-sm btn-purple" to={post.fields.slug}>
+                        </p>
+                        <div className="flex justify-content-start">
+                          <Link className="btn btn-sm btn-purple space-t" to={post.fields.slug}>
                             Keep Reading →
                           </Link>
-                        </p>
+                        </div>
                       </div>
                     </div>
                 ))}
@@ -85,7 +87,8 @@ export const pageQuery = graphql`
           frontmatter {
             title
             templateKey
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "MMM YYYY")
+            author
           }
         }
       }

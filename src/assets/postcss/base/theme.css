@@ -150,7 +150,7 @@
 
     &.body-shapes {
         z-index: 3;
-        overflow: hidden;
+        overflow: hidden;        
 
         &::before {
             z-index: -1;

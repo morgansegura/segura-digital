@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 
-
 class Header extends Component {
 
     state = {
@@ -71,16 +70,10 @@ class Header extends Component {
                             <strong>Segura</strong>
                         </Link>
                     </h1>
-                    <nav className="navigation-main">
-                        <Link className="link" to="/work">Portfolio</Link>
-                        <Link className="link" to="/illustration">Illustration</Link>
-                        <Link className="link" to="/blog">Blog</Link>
-                        <Link className="link" to="/about">About</Link>                        
-                    </nav>
                     <div className="menu-icon" onClick={event => { this.openMobileNav(event) }}>
                         <div className="menu-icon__center"></div>
                     </div>
-                </div>
+                </div>             
             </header>            
 
         )

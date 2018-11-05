@@ -1,18 +1,26 @@
 .single {
-
     &__content-block {
         padding-bottom: 2rem;
     }
     &__content {
         padding-bottom: 1rem;
-        p {
-            color: $purple-light;            
-            margin-top: 25px;
-            line-height: 1.7;        
-        }  
-        ul li { list-style-type: disc;}
+
+        ul li { list-style-type: disc }
+        /* Headings */    
+        h2, h3, h4, h5, h6 {
+            a {
+                background-color: color(google-color(cyan, a400) a(.2));
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+                color: #1a1a1a;
+                transition: background-color .3s ease-out;
+
+                &:hover, &:active {
+                    background-color: color(google-color(cyan, a400) a(.3));
+                }                
+            }            
+        }
+
         h2 {
-            font-family: $serif-primary;
             font-size: 24px;
             border-top: 1px solid #ececec;
             margin-top: 44px;
@@ -21,18 +29,29 @@
 
             @mixin atMedium {
                 font-size: 35px;            
-            }       
+            }
+
+            .panel & {
+                border-top: none;
+                margin-top: 0;
+                padding-top: 30px;
+            }
+        }        
+        h3, h4, h5, h6 {
+            margin-top: 30px;
+            margin-bottom: -15px;
         }
-    
-        &__date {
-            margin-top: 15px;
-            font-weight: 600;
+
+        p {
+            color: $purple-light;
+            margin-top: 25px;
+            line-height: 1.7;
         }
         img {
             max-width: 100%;
             display: block;
         }
-        a {
+        p > a {
             background-color: color(google-color(cyan, a400) a(.2));
             border-bottom: 1px solid rgba(0,0,0,0.1);
             color: #1a1a1a;
@@ -92,6 +111,11 @@
             font-size: 24px;    
         }      
     }    
+    &__date {
+        border-top: none;
+        margin-top: 1rem;
+        margin-bottom: -1rem;
+    }    
 }
 
 .four-o-four {
@@ -128,7 +152,6 @@
         }
     }
     h2 {
-
         color: white;
         font-weight: 400;
         line-height: 1;
@@ -147,7 +170,7 @@
         }
     }
 }
-
+     
 .puzzle {
     position: relative;
 

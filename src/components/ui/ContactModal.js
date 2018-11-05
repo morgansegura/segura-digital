@@ -20,14 +20,18 @@ class ContactModal extends Component {
     }
 
     openModal() {
+        const body = document.getElementsByTagName('body')[0]
+        body.classList.add('modal--is-open')
         this.setState({ modalIsOpen: true })
     }
 
     afterOpenModal() {
-
+    
     }
 
     closeModal() {
+        const body = document.getElementsByTagName('body')[0]
+        body.classList.remove('modal--is-open')        
         this.setState({ modalIsOpen: false })
     }   
 

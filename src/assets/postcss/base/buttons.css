@@ -106,5 +106,41 @@
     position: fixed;
     right: 30px;
     top: 18px;
-    z-index: 0;
+    z-index: 1;
+    transform: translateX(0);
+    transition: all .3s ease-out;
+    opacity: 1;
+    visibility: visible;
+
+    &:active {
+        z-index: 0;
+    }
+    .modal--is-open & {
+        z-index: 0;
+    }
+    .nav--is-open & {
+        transform: translateX(230px);
+    }
+}
+.space {
+    &-y {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    &-x {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+    &-t {
+        margin-top: 30px;
+    }
+    &-b {
+        margin-bottom: 30px;
+    }
+    &-r {
+        margin-right: 30px;
+    }    
+    &-l {
+        margin-left: 30px;
+    }    
 }

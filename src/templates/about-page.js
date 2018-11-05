@@ -10,19 +10,16 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   return (
     <section className="section single bgcolor-grey pattern-wool">
       <div className="container">
-        <div className="row">
-          <div className="col-12 col-md-8 single__content-block">
-            <div className="single__content">
-              <h1 className="single__title">
-                {title}
-              </h1>
-              <PageContent className="content" content={content} />
-            </div>
+
+        <div className="single__content-block">
+          <div className="single__content">
+            <h1 className="single__title">
+              {title}
+            </h1>
+            <PageContent className="content" content={content} />
           </div>
-          <aside className="aside col-12 col-md-4">
-            Hello
-          </aside>
         </div>
+
       </div>
     </section>
   )

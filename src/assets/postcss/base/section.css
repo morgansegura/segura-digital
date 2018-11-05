@@ -34,14 +34,48 @@
 .section__title-block {
     margin-left: auto;
     margin-right: auto;
-    padding-top: $num-sm;
-    padding-bottom: $num-sm;
-    max-width: 300px;
+    padding-top: 60px;
+    max-width: 90%;
 
     @mixin atSmall {
-        max-width: 90%;
+        padding-top: 90px;
     }
 
+    & .heading {
+        font-weight: 400;
+        line-height: 1.2;
+        padding-bottom: 0;
+        margin-bottom: 10px;
+        font-size: 30px;        
+        
+        @mixin atSmall {
+            font-size: 40px;
+        }
+        @mixin atMedium {
+            max-width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+        }        
+    }
+    & .subheading {
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 1.4;
+        padding-top: 0;
+        margin-top: 0;
+        margin-bottom: 60px;
+        color: google-color(grey, 600);
+
+        @mixin atSmall {
+            font-size: 24px;
+            margin-bottom: 90px;           
+        }            
+        @mixin atMedium {
+            max-width: 60%;
+            margin-left: auto;           
+            margin-right: auto;             
+        }
+    }
     .underheading {
         position: relative;
         padding-bottom: 10px;
@@ -71,15 +105,15 @@
 }
 
 .section-hero {
-    position: relative;
+    position: fixed;
     display: flex;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
     padding: 0;
     margin: 0;
 
     @mixin atMedium {
-
+        height: 100vh;
     }
 
     &__title-block {

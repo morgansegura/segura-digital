@@ -3,7 +3,8 @@
     background: white;
     color: google-color(grey, 20);
     transition: all .3s ease-out;
-    border-top: 1px solid google-color(grey, 200);
+    
+    padding-top: 30px;
 
     &__inner {
         display: flex;
@@ -11,9 +12,9 @@
         flex-direction: column; 
         justify-content: center;
         align-items: center;  
-
-        padding-top: 30px;
-        padding-bottom: 30px;
+        border-top: 1px solid google-color(grey, 200);
+        padding-top: .5rem;
+        padding-bottom: .5rem;
 
         .btn {
             order: 2;

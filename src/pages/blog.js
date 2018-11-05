@@ -3,11 +3,18 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import HeadingBlock from '../components/ui/HeadingBlock'
 
 
 export default class BlogPage extends Component {
 
   render() {
+    const blogListHeading = {
+      main: true,
+      title: 'Latest Posts',      
+      subtitle: 'an interesting SEO rich subtitle',
+      classList: ''
+    }    
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
 
@@ -19,34 +26,35 @@ export default class BlogPage extends Component {
             <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js" defer="true"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js" defer="true"></script>
           </Helmet>
-          <div className="container">
+          <div className="container">       
             <div className="row">
-              <div className="col-12 col-md-8 single__content-block">
-                <div className="single__content">
+              <div className="col-12 col-md-8 list__content-block">
+
+                <h1 className="single__title">
+                  Everything I always wanted to say, flowed rapidly from my mouth.
+                </h1>
+                <p className="single__description">
+                  Manufactured by the Chemex Corporation in Chicopee, Massachusetts. In 1958, designers at the Illinois Institute of Technology said that the Chemex…
+                </p>
+
+                <div className="single__content">                  
                   {posts
                     .map(({ node: post }) => (
                       <div key={post.id}>
-                      { post.id === 0 ?
-                        <h1 className="single__title no-border">
-                          <Link className="has-text-primary" to={post.fields.slug}>
-                            {post.frontmatter.title}
-                          </Link>
-                        </h1>
-                      : 
-                        <h2 className="single__title no-border">
+                        <h2 className="post-list__title">
                           <Link className="has-text-primary" to={post.fields.slug}>
                             {post.frontmatter.title}
                           </Link>
                         </h2>
-                      }
                         <p className="single__date">
-                          {post.frontmatter.date} by {post.frontmatter.author}
+                          <strong>{post.frontmatter.date}</strong>
+                          {post.frontmatter.author ? ` | ${post.frontmatter.author}` : null}
                         </p>
                         <p>
                           {post.excerpt}
                         </p>
-                        <div className="flex justify-content-end">
-                          <Link className="btn btn-sm btn-purple" to={post.fields.slug}>
+                        <div className="flex justify-content-start">
+                          <Link className="btn btn-sm btn-purple space-t" to={post.fields.slug}>
                             Keep Reading →
                           </Link>
                         </div>
@@ -90,7 +98,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             templateKey
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "MMM YYYY")
             author
           }
         }
