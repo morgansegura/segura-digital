@@ -1,18 +1,16 @@
 .footer {
     position: relative;
-    background: white;
+    background: $purple-light;
+    border-bottom: 15px solid $purple-medium;
     color: google-color(grey, 20);
     transition: all .3s ease-out;
-    
-    padding-top: 30px;
 
     &__inner {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column; 
         justify-content: center;
-        align-items: center;  
-        border-top: 1px solid google-color(grey, 200);
+        align-items: center;
         padding-top: .5rem;
         padding-bottom: .5rem;
 

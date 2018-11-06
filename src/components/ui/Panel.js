@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class Panel extends Component {
     state = {
         // dataSource: DataSource.getBlogPost(props.id)
-        classList: this.props.classList ? this.props.classList : 'h3'
+        classList: this.props.classList ? this.props.classList : null
     }  
     componentDidMount() {
         // DataSource.addChangeListener(this.handleChange);

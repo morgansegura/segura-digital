@@ -3,18 +3,10 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import HeadingBlock from '../components/ui/HeadingBlock'
-
 
 export default class BlogPage extends Component {
 
   render() {
-    const blogListHeading = {
-      main: true,
-      title: 'Latest Posts',      
-      subtitle: 'an interesting SEO rich subtitle',
-      classList: ''
-    }    
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
 

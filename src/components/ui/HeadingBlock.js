@@ -3,7 +3,15 @@ import React from 'react';
 const HeadingBlock = (props) => {
     // console.log(props.headings)
     return (
-        <header className="section__title-block">
+        <header 
+            className="section__title-block"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-duration="800"
+            data-aos-easing="ease-out"
+            data-aos-mirror="false"
+            data-aos-once="false"             
+        >
         { props.headings.main === true ?
             <div className="container container-md ">            
                 {props.headings.title ?

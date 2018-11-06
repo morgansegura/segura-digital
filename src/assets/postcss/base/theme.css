@@ -88,7 +88,28 @@
             }
         }
     }   
+    &.blend-purple {
+        /* background: linear-gradient(-30deg, google-color(purple, 400),  google-color(teal, 400)); */
+        height: 20px;
+        z-index: 2;
+        top: -10px;
+        /* overflow: hidden; */
 
+        &::before {
+            z-index: -1;
+            width: 100%;
+            border-radius: 100% 100% 0 0;
+            background: linear-gradient(white, red);
+            transform: translate(0, -40px) skewX(0) skewY(0) scaleY(1) scaleX(1.04) rotate(0deg); 
+
+            @mixin atMedium {
+                /* transform: translate(65%, 50%) skewX(10deg) skewY(0) scaleY(1) scaleX(1.04) rotate(60deg);  */
+            }
+        }
+        &::after {
+         
+        }     
+    }
     &.masthead {
         background: linear-gradient(-30deg, google-color(purple, 400),  google-color(teal, 400));
         overflow: hidden;
@@ -290,6 +311,9 @@
     }
     &--white {
         background: white;
+    }
+    &--grey {
+        background-color: color( #efefef blend($purple-light 5%));
     }
     &--blend-light {
         background-color: color(white a(.8));
