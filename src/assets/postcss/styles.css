@@ -3,7 +3,6 @@
 
 /* Vendors */
 @import 'vendors/normalize';
-/* @import 'prismjs/themes/prism-okaidia.css'; */
 @import 'vendors/bootstrap-grid.min.css';
 
 /* Base (Shared) Styles */
