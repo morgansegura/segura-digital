@@ -1,206 +1,90 @@
 * {box-sizing: border-box}
 
 body {
-  position: relative;
-  color: $main-gray;
-  overflow-x: hidden;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  font-family: $sans-primary;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;  
-  background-color: $purple-dark;
-
-  &.nav--is-open {
-    overflow: hidden;
-    @mixin atMedium {
-
-    }
-  }
-  &.modal--is-open {
-    overflow: hidden;
-    @mixin atMedium {
-
-    }
-  }
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: $base-bg-color;    
+    font-family: $base-font-family;
+    color: $base-font-color;
+    font-weight: $base-font-weight;
+    font-size: $base-font-size;
+    line-height: $base-font-height;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  
 }
 
 /* Body Structure */
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  z-index: 1;
-  transform: translateX(0);
-  transition: all .3s ease-out;
-  
-  .nav--is-open & {
-    transform: translateX(230px);
     position: relative;
-
-    @mixin atMedium {
-      /* position: relative;
-      transform: translateX(0); */
-
-      .main, .footer {
-        opacity: 1;
-      }      
-    }
-  }  
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    height: 100vh;
+    transition: $base-transition;
 }
 
 .main {
-  position: relative;
-  background-color: white;
-  flex: 1;
-  /* padding-top: 60px; */
-
-  &.nav--is-open {
-
-  }
-
-  @mixin atMedium {
-
-    .is--scrolling & {
-      padding-top: 60px;
-    }    
-  }  
+    position: relative;
+    flex: 1;
 }
-
-/* Defaults */
 
 iframe {border: none;}
 
-img {
-  /* max-width: 100%;
-  min-height: 100%; */
-  display: block;  
-}
-
 ul li {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 a:hover {
-  text-decoration: none; 
+    text-decoration: none; 
 }
 
 p, h1, h2, h3, h4, h5, h6 { 
-
-  margin: 0;   
-
-  &::before {
-    margin: 0; 
-  }
-  &::after {
-    margin: 0; 
-  }
+    margin: 0;
+    &::before {
+        margin: 0; 
+    }
+    &::after {
+        margin: 0; 
+    }
 }
 
-p {}
-
-.narrow {
-  font-family: $sans-primary;
-}
-
-.secondaryFont {
-    /*font-family: $secondaryFont;*/
-}
+/* ensure Font themes don't automatically add 
+icons to links directly. */
 
 a {
-    /* color: google-color(blue, 300); */
+    color: inherit;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
     transition: color .3s ease-out;
-    
+
     &:hover {
-      /* color: google-color(blue, 500); */
+        color: inherit;
+    }
+}
+a[href*='//'], a[href*='//']:hover {
+
+    &::after {
+        content: "";
+    }
+    &.external {
+        content: "url(data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20class='i-e…023%2018%20M18%204%20L28%204%2028%2014%20M28%204%20L14%2018'/%3E%3C/svg%3E)";
     }
 }
 
-.cf {
-  @mixin clearfix;
-}
-.sticky {
-  display: sticky;
-}
+/*  Remove gutters from bootstrap4 grid, 
+e.g. no gap or spacing */
+
 .no-gutters {
-  margin-right: 0;
-  margin-left: 0;
+    margin-right: 0;
+    margin-left: 0;
 
-  > .col,
-  > [class*="col-"] {
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
-
-.no-border {
-  border-top: none;
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
-}
-
-.no-negative {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hide-mobile {
-  opacity: 0;
-  z-index: -1;
-  visibility: hidden;
-
-  @mixin atMedium {
-    opacity: 1;
-    z-index: 1;
-    visibility: visible;
-  }
-}
-code[class*="language-"], 
-pre[class*="language-"] {
-  display: block;
-  font-size: 13px;
-}
-
-.flex {
-  display: flex;
-}
-
-.list {
-  display: flex;
-
-  &-center {
-    justify-content: center;
-  }
-  &-column {
-    flex-direction: column;
-  }
-  a {
-      background-color: color(google-color(yellow, a400) a(.2));
-      border-bottom: 1px solid rgba(0,0,0,0.1);
-      color: #1a1a1a;
-      transition: background-color .3s ease-out;
-
-      &:hover, &:active {
-          background-color: color(google-color(yellow, a400) a(.3));
-      }     
-  }   
-}
-.item {
-  &-row {
-    margin-right: 1rem;
-  }
-  &-stack {      
-    margin-bottom: .5rem;
-  }
-  &-middle {
-    align-items: center;
-  }     
+    > .col,
+    > [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
 }

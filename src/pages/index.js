@@ -1,23 +1,26 @@
 import React, { Component } from 'react'
+import { isMobile } from "react-device-detect";
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-
-import AOS from 'aos';
-
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
+
+import AOS from 'aos';
 import 'aos/dist/aos.css'
 
+
 export default class IndexPage extends Component {
-  componentDidMount() {
-    AOS.init();    
-  }
   render() {
+    const { data } = this.props
+    console.log(data.heroImgs)
+
 
     return (
       <Layout>
-        <Hero />        
-    
+      {
+        !!isMobile
+      }
+          <Hero  />
       </Layout>
     )
   }
@@ -47,11 +50,10 @@ export const pageQuery = graphql`
           frontmatter {
             title
             templateKey
-            date(formatString: "MMM YYYY")
-            author
+            date(formatString: "MMMM DD, YYYY")
           }
         }
       }
-    }
+    }    
   }
 `

@@ -23,7 +23,7 @@ class Panel extends Component {
         return (
         <div className={`panel ${this.state.classList}`}>
             <div className="panel__list">
-            {this.props.header ? 
+            {!!this.props.header ? 
                 <header className="panel__header">
                     {this.props.header.data.map((content, i) => (                                
                     <div className="panel__header-inner " key={i}>
@@ -31,7 +31,7 @@ class Panel extends Component {
                     </div>
                     ))}
                 </header>
-                : null /* [/header]*/ }
+                : null }
 
                 {this.props.children}
             

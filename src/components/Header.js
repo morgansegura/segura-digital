@@ -1,83 +1,39 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
+// Components
+import Navigation from './Navigation';
 
 class Header extends Component {
-
-    state = {
-
-    }
-
-    // Mobile navigation
-    openMobileNav = () => {
-        const body = document.getElementsByTagName('body')[0]
-        body.classList.toggle('nav--is-open')
-    }
-
-    closeMobileNav = () => {
-        // const specifiedElement = document.querySelector(".menu-icon")
-        const body = document.getElementsByTagName('body')[0]
-
-        // document.addEventListener('click', function (event) {
-        //     const isClickInside = specifiedElement.contains(event.target);
-
-        //     if (body.classList.contains('nav--is-open')) {
-        //         if (!isClickInside) {
-        //             body.classList.remove('nav--is-open')
-        //         }
-        //     }
-        // })
-
-        document.addEventListener('keyup', function (e) {
-            let keyCode = e.keyCode;
-            // console.log(keyCode)
-            if (keyCode === 27) {
-                body.classList.remove('nav--is-open')
-            }
-        });
-    }
-
-
-    stickyHeader = () => {
-        const header = document.getElementsByClassName('header-main')
-        const footer = document.getElementsByClassName('footer')
-        const sticky = header[0].offsetTop
-        // console.log('sticky', sticky)
-
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > sticky) {
-                header[0].classList.add('is--scrolling')
-                footer[0].classList.add('is--scrolling')
-            } else {
-                header[0].classList.remove('is--scrolling')
-                footer[0].classList.remove('is--scrolling')
-            }
-
-        })
-    }
-
-    componentDidMount() {
-        this.stickyHeader()
-        this.closeMobileNav()
-    }
-
     render() {
-        return (     
-            
-            <header className="header-main">
-                <div className="header-main__inner container">
-                    <h1 className="logo">
-                        <Link to="/">
-                            <strong>Segura</strong>
+        const meta = this.props.metadata
+        const openMobileNav = () => {
+            let el = document.getElementById('wrapper')
+            el.classList.toggle('mobile-nav--is-open');
+        }
+        return (
+            <header className="header">
+                <div className="container">
+                    <div className="header__inner">
+                        <Link className="logo" to="/" title={`${meta.company}`}>
+                            <div className="logo-text">
+                                <div className="logo-text__inner">
+                                    <span className="row1">The </span>
+                                    <div className="last-row">
+                                        <span className="row2">Brazilian Guys</span>
+                                        <span className="row3"> Est. 2015 San Diego, CA </span>
+                                    </div>
+                                </div>
+                            </div>
                         </Link>
-                    </h1>
-                    <div className="menu-icon" onClick={event => { this.openMobileNav(event) }}>
-                        <div className="menu-icon__center"></div>
+                        <Navigation meta={meta} />
+                        <div className="mobile-nav__trigger" onClick={openMobileNav}>
+                            <span className="center"></span>
+                        </div>
                     </div>
-                </div>             
-            </header>            
-
-        )
+                </div>
+            </header>
+        );
     }
 }
 
-export default Header
+export default Header;

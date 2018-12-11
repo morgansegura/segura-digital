@@ -4,30 +4,34 @@
 /* Vendors */
 @import 'vendors/normalize';
 @import 'vendors/bootstrap-grid.min.css';
-/* @import 'aos/dist/aos.css'; */
+@import 'vendors/prism-theme.css'; /* Bootstrap4 grid and flexbox classes */
+@import "vendors/glide.core.min";
+@import "vendors/glide.theme.min";
 
-/* Base (Shared) Styles */
+/* Base Styles */
 @import 'base/variables';
 @import 'base/utilities';
 @import 'base/baseline';
-@import 'base/typography';
-@import 'base/buttons';
-@import 'base/container';
-@import 'base/section';
-@import 'base/panel';
-@import 'base/theme';
-@import 'base/aside';
-@import 'base/forms';
+@import 'base/typeset';
+@import 'base/image';
 
-/* UI Elements */
-@import 'ui/modal';
-
-/* BEM Modules */
-@import 'modules/header';
-@import 'modules/footer';
-@import 'modules/navigation';
-@import 'modules/services';
-@import 'modules/article';
-@import 'modules/single';
-@import 'modules/lists';
+/* Default Modules */
 @import 'modules/code';
+@import 'modules/buttons';
+@import 'modules/forms';
+@import 'modules/aside';
+@import 'modules/container';
+@import 'modules/sections';
+@import 'modules/panel';
+
+/* Theme Styled Elements */
+@import 'theme/header';
+@import 'theme/footer';
+@import 'theme/navigation';
+@import 'theme/post';
+@import 'theme/lists';
+@import 'theme/modal';
+@import 'theme/panel';
+@import 'theme/buttons';
+@import 'theme/forms';
+@import 'theme/social-media';

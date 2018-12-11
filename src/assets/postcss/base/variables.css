@@ -1,36 +1,28 @@
 /* Fonts */
 $sans-primary: 'Source Sans Pro', sans-serif;
-$mono-primary: 'Roboto Mono', monospace, sans-serif;
-$serif-primary: 'Roboto Slab', serif;
-$cursive: 'Norican', cursive;
+$sans-secondary: 'Fjalla One', sans-serif;
+$serif-primary: 'Arvo', serif;
+$cursive: 'Just Another Hand', cursive;
+$cursive-secondary: 'Dancing Script', cursive;
 
 /* Shades */
-$main-black: #20232a;
+$main-black: #181a1e;
 $main-white: #ededed;
-$main-gray: #484848;
+$main-gray: #4a4a4a;
 $main-gray-light: #a9a9a9;
-$tan: #f4f1ec;
+
+/* Social Colors */
+$facebook-blue: #4267b2;
+$instagram-grey: #231F20;
+$yelp-red: #D32323;
 
 /* Theme Colors */
-$purple-lighter: #8b808a;
-$purple-light: #3c2a3b;
-$purple-medium: #271726;
-$purple-dark: #1d161d;
+$cta: google-color(amber, a400);
+$cta-lighter: google-color(amber, a700);
+$cta-darker: google-color(amber, 700);
+$cta-alt: red;
 
 /* Alt Colors */
-$green-lights: #5dcf91;
-$green-dark: #3f9065;
-$purple: #a3679a;
-$peach: #ff907d;
-$red-light: #df4f4f;
-$red-dark: #b0191f;
-$yellow-light: #febb4a;
-$yellow-dark: #e4a443;
-$teal-light: #1f9ca0;
-$teal-dark: #2a5464;
-$blue-black-light: #3a3c49;
-$blue-black-dark: #2c2f38;
-$green-light: google-color(green, 50);
 
 /* Dimensions */
 $atSmallest: 320px;
@@ -39,8 +31,18 @@ $atMedium: 768px;
 $atLarge: 992px;
 $atLargest: 1200px;
 
-/* Spacing */
-$num-sm: 30px;
-$num-md: 60px;
-$num-lg: 90px;
-$num-xl: 120px;
+/* Padding, Margin defaults */
+$pad: 15px;
+$pad-sm: 30px;
+$pad-md: 60px;
+$pad-lg: 90px;
+$pad-xl: 120px;
+
+/* Setup Baseline.css elements */
+$base-font-size: 1rem;
+$base-font-family: $sans-primary;
+$base-font-weight: 300;
+$base-font-height: 1.7;
+$base-font-color: $main-gray;
+$base-bg-color: $main-black;
+$base-transition: all .3s ease-out;
