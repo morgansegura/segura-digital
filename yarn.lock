@@ -782,6 +782,11 @@
     humps "^2.0.1"
     prop-types "^15.5.10"
 
+"@glidejs/glide@^3.2.4":
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/@glidejs/glide/-/glide-3.2.4.tgz#2ea91d1b6c209983511026b93080f93b83e5e1c4"
+  integrity sha512-ylTX+3NB2XW/y5CCda9xRkO+q+016u6YL8X/zlNGkfDRAx/lm/UtFoXL1EBm+zUDYIAldeoLbloM2vJpH4YwZA==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -5143,13 +5148,6 @@ gatsby-cli@^2.4.3:
     update-notifier "^2.3.0"
     yargs "^11.1.0"
     yurnalist "^0.2.1"
-
-gatsby-image@^2.0.15:
-  version "2.0.19"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.0.19.tgz#375d570e04b3d442b50e409fd84c272c40d7cabf"
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-    prop-types "^15.6.1"
 
 gatsby-link@^2.0.5:
   version "2.0.5"
