@@ -4,6 +4,7 @@
 /* Vendors */
 @import 'vendors/normalize';
 @import 'vendors/bootstrap-grid.min.css';
+/* @import 'aos/dist/aos.css'; */
 
 /* Base (Shared) Styles */
 @import 'base/variables';
@@ -17,6 +18,9 @@
 @import 'base/theme';
 @import 'base/aside';
 @import 'base/forms';
+
+/* UI Elements */
+@import 'ui/modal';
 
 /* BEM Modules */
 @import 'modules/header';
